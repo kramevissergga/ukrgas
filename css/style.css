@@ -286,7 +286,11 @@ h6 {
 .menu__list {
   display: flex;
   align-items: center;
-  gap: 1.5625rem
+  flex-wrap: wrap;
+  -webkit-column-gap: 1.5625rem;
+  -moz-column-gap: 1.5625rem;
+  column-gap: 1.5625rem;
+  row-gap: .3125rem
 }
 .menu__submenu {
   transition: all .3s;
@@ -1200,7 +1204,7 @@ h6 {
   .tabs-slider__navigation {
     overflow-x: hidden
   }
-  .tabs-slider__title:hover {
+  .tabs-slider__title:not(._tab-active):hover {
     color: #fecc00
   }
   .slider-item:hover .slider-item__bottom {

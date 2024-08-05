@@ -3006,7 +3006,7 @@
             gap: "30px",
             padding: {
                 left: 0,
-                right: "106"
+                right: "150"
             },
             breakpoints: {
                 767.98: {
