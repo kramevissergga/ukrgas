@@ -2972,7 +2972,7 @@
                 tabsBlock.setAttribute("data-tabs-index", index);
                 tabsBlock.addEventListener("click", setTabsAction);
                 initTabs(tabsBlock);
-                const splideElement = tabsBlock.querySelector(".splide");
+                const splideElement = tabsBlock.querySelector("._splide-tabs");
                 if (splideElement) {
                     const splide = new Splide(splideElement, {
                         speed: 300,
