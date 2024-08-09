@@ -2,7 +2,7 @@
 <html lang="uk">
 
 <head>
-	<title>Новини</title>
+	<title>Каталог</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -96,120 +96,96 @@
 				<button type="button" class="menu__icon icon-menu"><span></span></button>
 			</div>
 		</header>
-		<main class="page">
-			<section class="page__hero hero" style="background-image: url(img/hero/news.webp);">
-				<div class="hero__container">
-					<div class="hero__breadcrumbs breadcrumbs">
+		<main class="page page--padding">
+			<section class="page__contacts contacts">
+				<div class="contacts__container">
+					<div class="contacts__breadcrumbs breadcrumbs breadcrumbs--dark">
 						<ul class="breadcrumbs__list">
 							<li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Головна</a></li>
-							<li class="breadcrumbs__item">Новини та події</li>
+							<li class="breadcrumbs__item">Місцезнаходження та контакти</li>
 						</ul>
 					</div>
-					<div class="hero__body">
-						<h1 class="hero__deco-title">новини та події</h1>
+					<div class="contacts__body">
+						<form action="#" method="post" enctype="multipart/form-data" class="contacts__form form-contacts">
+							<h1 class="form-contacts__title title">ЗВ'ЯЗАТИСЯ З НАМИ</h1>
+							<div class="form-contacts__items">
+								<div class="form-contacts__field form-contacts__field--small">
+									<input type="text" class="input" name="firstName" placeholder="Ім'я*">
+								</div>
+								<div class="form-contacts__field form-contacts__field--small">
+									<input type="text" class="input" name="lastName" placeholder="Прізвище*">
+								</div>
+								<div class="form-contacts__field">
+									<input type="text" class="input" name="company" placeholder="Компанія*">
+								</div>
+								<div class="form-contacts__field">
+									<input type="email" class="input" name="email" placeholder="Email*">
+								</div>
+								<div class="form-contacts__field">
+									<input type="text" class="input" name="telephone" placeholder="Номер телефону*">
+								</div>
+								<div class="form-contacts__field">
+									<input type="text" class="input" name="lastName" placeholder="Місто*">
+								</div>
+								<div class="form-contacts__field">
+									<input type="text" class="input" name="lastName" placeholder="Адреса*">
+								</div>
+								<div class="form-contacts__field">
+									<textarea name="message" class="textarea" placeholder="Повідомлення*"></textarea>
+								</div>
+							</div>
+							<div class="form-contacts__footer">
+								<div style="background-color: #FFF;" class="form-contacts__captcha"></div>
+								<button class="form-contacts__button button">
+									Відправити
+								</button>
+							</div>
+						</form>
+						<div class="contacts__info info-contacts">
+							<div class="info-contacts__item">
+								<div class="info-contacts__icon _icon-call"></div>
+								<div class="info-contacts__body">
+									<div class="info-contacts__title">Телефон</div>
+									<div class="info-contacts__list">
+										<div class="info-contacts__label">
+											<a href="tel:(044) 494-09-31" class="info-contacts__link">(044) 494-09-31</a>
+										</div>
+										<div class="info-contacts__label">
+											<a href="tel:(044) 494-09-32" class="info-contacts__link">(044) 494-09-32</a>
+										</div>
+										<div class="info-contacts__label">
+											<a href="tel:(044) 494-09-33" class="info-contacts__link">(044) 494-09-33</a>
+										</div>
+										<div class="info-contacts__label">
+											<a href="tel:(044) 494-09-34" class="info-contacts__link">(044) 494-09-34</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="info-contacts__item">
+								<div class="info-contacts__icon _icon-mail"></div>
+								<div class="info-contacts__body">
+									<div class="info-contacts__title">Email</div>
+									<div class="info-contacts__label">
+										<a href="mailto:office@ukrgazcom.com.ua" class="info-contacts__link">office@ukrgazcom.com.ua</a>
+									</div>
+								</div>
+							</div>
+							<div class="info-contacts__item">
+								<div class="info-contacts__icon _icon-location"></div>
+								<div class="info-contacts__body">
+									<div class="info-contacts__title">Адреса</div>
+									<div class="info-contacts__label">
+										04128, Україна, м. Київ, ас 79
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
-			<div class="page__news news">
-				<div class="news__container">
-					<div class="news__items">
-						<a href="#" class="news__item item-news">
-							<img src="img/news/01.webp" alt="Image" class="ibg">
-							<div class="item-news__date">23<span>жов</span></div>
-							<div class="item-news__body">
-								<h4 class="item-news__title">
-									КОРОТКА ПРЕЗЕНТАЦІЯ НАШОГО СУЧАСНОГО
-									ЗАВОДУ В ДЕЗЕНЦАНО-ДЕЛЬ-ГАРДА
-								</h4>
-								<div class="item-news__text text">
-									<p>
-										Коротка презентація нашого сучасного заводу в Дезенцано-дель-Гарда, де наші регулятори тиску газу
-										спроектовані
-									</p>
-								</div>
-							</div>
-						</a>
-						<a href="#" class="news__item item-news">
-							<img src="img/news/02.webp" alt="Image" class="ibg">
-							<div class="item-news__date">23<span>жов</span></div>
-							<div class="item-news__body">
-								<h4 class="item-news__title">
-									КОРОТКА ПРЕЗЕНТАЦІЯ НАШОГО СУЧАСНОГО
-									ЗАВОДУ В ДЕЗЕНЦАНО-ДЕЛЬ-ГАРДА
-								</h4>
-								<div class="item-news__text text">
-									<p>
-										Коротка презентація нашого сучасного заводу в Дезенцано-дель-Гарда, де наші регулятори тиску газу
-										спроектовані
-									</p>
-								</div>
-							</div>
-						</a>
-						<a href="#" class="news__item item-news">
-							<img src="img/news/03.webp" alt="Image" class="ibg">
-							<div class="item-news__date">23<span>жов</span></div>
-							<div class="item-news__body">
-								<h4 class="item-news__title">
-									TЕХНІЧНИЙ ІНФОРМАЦІЙНИЙ БЮЛЕТЕНЬ - REFLUX 819 12”
-								</h4>
-								<div class="item-news__text text">
-									<p>
-										Reflux 819 12” - Наш найбільший пілотний регулятор
-									</p>
-								</div>
-							</div>
-						</a>
-						<a href="#" class="news__item item-news">
-							<img src="img/news/01.webp" alt="Image" class="ibg">
-							<div class="item-news__date">23<span>жов</span></div>
-							<div class="item-news__body">
-								<h4 class="item-news__title">
-									КОРОТКА ПРЕЗЕНТАЦІЯ НАШОГО СУЧАСНОГО
-									ЗАВОДУ В ДЕЗЕНЦАНО-ДЕЛЬ-ГАРДА
-								</h4>
-								<div class="item-news__text text">
-									<p>
-										Коротка презентація нашого сучасного заводу в Дезенцано-дель-Гарда, де наші регулятори тиску газу
-										спроектовані
-									</p>
-								</div>
-							</div>
-						</a>
-						<a href="#" class="news__item item-news">
-							<img src="img/news/02.webp" alt="Image" class="ibg">
-							<div class="item-news__date">23<span>жов</span></div>
-							<div class="item-news__body">
-								<h4 class="item-news__title">
-									КОРОТКА ПРЕЗЕНТАЦІЯ НАШОГО СУЧАСНОГО
-									ЗАВОДУ В ДЕЗЕНЦАНО-ДЕЛЬ-ГАРДА
-								</h4>
-								<div class="item-news__text text">
-									<p>
-										Коротка презентація нашого сучасного заводу в Дезенцано-дель-Гарда, де наші регулятори тиску газу
-										спроектовані
-									</p>
-								</div>
-							</div>
-						</a>
-						<a href="#" class="news__item item-news">
-							<img src="img/news/03.webp" alt="Image" class="ibg">
-							<div class="item-news__date">23<span>жов</span></div>
-							<div class="item-news__body">
-								<h4 class="item-news__title">
-									TЕХНІЧНИЙ ІНФОРМАЦІЙНИЙ БЮЛЕТЕНЬ - REFLUX 819 12”
-								</h4>
-								<div class="item-news__text text">
-									<p>
-										Reflux 819 12” - Наш найбільший пілотний регулятор
-									</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<button class="news__button button">
-						показати ще
-					</button>
-				</div>
+			<div id="map" class="page__map map">
+
 			</div>
 		</main>
 		<footer class="footer">
@@ -252,6 +228,7 @@
 			</div>
 		</footer>
 	</div>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgLvifm5erUrA1ATvB3tbnrZ1-TMezA3Y&callback=myMap&_v=20240809180811"></script>
 	<script src="js/app.min.js?_v=20240809180811"></script>
 </body>
 

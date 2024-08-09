@@ -3331,6 +3331,25 @@
         slider.addEventListener("mouseup", stopDragging, false);
         slider.addEventListener("mouseleave", stopDragging, false);
     }
+    function mapInit() {
+        var mapProp = {
+            center: new google.maps.LatLng(50.42588191718832, 30.395857632587475),
+            zoom: 14
+        };
+        var map = new google.maps.Map(document.getElementById("map"), mapProp);
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(50.42588191718832, 30.395857632587475),
+            map
+        });
+        var infoWindowContent = `\n    <div style="font-size:14px; font-family:Arial,sans-serif;">\n      <strong>Укргазкомплект ПТК ТОВ</strong><br>\n      Постачальник промислового обладнання<br><br>\n      <span>Адреса:</span> Плодова вул. 1, Київ, Київська область, 04128<br>\n      <span>Телефон:</span> <a href="tel:+380444940931">044 494 0931</a><br>\n      <span>Години роботи:</span> 09 – 18\n    </div>\n  `;
+        var infoWindow = new google.maps.InfoWindow({
+            content: infoWindowContent
+        });
+        marker.addListener("click", (function() {
+            infoWindow.open(map, marker);
+        }));
+    }
+    mapInit();
     window["FLS"] = true;
     menuInit();
     spoilers();
