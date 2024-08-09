@@ -1046,7 +1046,8 @@ ma .product-item__image--padding {
 }
 .menu__title {
   font-size: .9375rem;
-  font-weight: 500
+  font-weight: 500;
+  padding: 2rem 0
 }
 .menu__title._spoiler-active::before {
   -webkit-transform: rotate(-180deg);
@@ -1977,7 +1978,7 @@ ma .product-item__image--padding {
     flex: 0 0 48.245614%
   }
 }
-@media (min-width:71.875em) {
+@media (min-width:71.87375em) {
   .menu__sublist {
     transition: all .3s;
     opacity: 0;
@@ -1998,7 +1999,7 @@ ma .product-item__image--padding {
     text-wrap: nowrap
   }
 }
-@media (min-width:71.875em)and (any-hover:hover) {
+@media (min-width:71.87375em)and (any-hover:hover) {
   .menu__subitem:hover {
     background-color: #fecc00
   }
@@ -2051,12 +2052,6 @@ ma .product-item__image--padding {
   }
   .header__menu {
     padding-left: 15.3125rem
-  }
-  .menu__title {
-    padding-top: 2rem
-  }
-  .menu__title {
-    padding-bottom: 2rem
   }
   .footer {
     padding-top: 3.375rem
@@ -2492,7 +2487,7 @@ ma .product-item__image--padding {
     margin-bottom: 2.5rem
   }
 }
-@media (max-width:71.875em) {
+@media (max-width:71.87375em) {
   .menu__body {
     position: fixed;
     width: 100%;
@@ -2599,12 +2594,7 @@ ma .product-item__image--padding {
     padding-bottom: .75rem
   }
   .menu__title {
-    padding-top: .9375rem
-  }
-  .menu__title {
-    padding-bottom: .9375rem;
-    padding-left: 1.875rem;
-    padding-right: 1.875rem;
+    padding: .9375rem 1.875rem;
     justify-content: left
   }
   .menu__subitem {
@@ -2615,7 +2605,7 @@ ma .product-item__image--padding {
     padding-top: 1.25rem
   }
 }
-@media (max-width:71.875em)and (any-hover:none) {
+@media (max-width:71.87375em)and (any-hover:none) {
   .icon-menu {
     cursor: default
   }
@@ -3239,17 +3229,9 @@ ma .product-item__image--padding {
     margin-bottom: clamp(2.5rem ,2.0294117647rem + 2.3529411765vw ,3.75rem)
   }
 }
-@media (max-width:71.875em)and (min-width:47.99875em) {
+@media (max-width:71.87375em)and (min-width:47.99875em) {
   .menu__body {
     max-width: 20rem
-  }
-}
-@media (min-width:71.875em)and (max-width:73.125em) {
-  .menu__title {
-    padding-top: clamp(.9375rem ,-60.15625rem + 85vw ,2rem)
-  }
-  .menu__title {
-    padding-bottom: clamp(.9375rem ,-60.15625rem + 85vw ,2rem)
   }
 }
 @media (min-width:90em)and (max-width:160em) {
