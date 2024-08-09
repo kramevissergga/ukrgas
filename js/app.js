@@ -2742,6 +2742,77 @@
             return html;
         };
     }();
+    const productsSlider = document.querySelectorAll(".product-slider");
+    productsSlider.forEach(((slider, index) => {
+        const parent = slider.closest("[data-slider-parent]");
+        let prevArrow = null;
+        let nextArrow = null;
+        if (parent) {
+            prevArrow = parent.querySelector(".slider-section__arrow--prev");
+            nextArrow = parent.querySelector(".slider-section__arrow--next");
+        }
+        const options = {
+            perMove: 1,
+            arrows: false,
+            pagination: false,
+            updateOnMove: true,
+            omitEnd: true,
+            perPage: 3,
+            flickMaxPages: 1,
+            flickPower: 100,
+            gap: "30px",
+            padding: {
+                left: 0,
+                right: "20%"
+            },
+            breakpoints: {
+                991.98: {
+                    perPage: 2
+                },
+                767.98: {
+                    gap: "10px",
+                    perPage: 1,
+                    padding: {
+                        left: 0,
+                        right: "40%"
+                    }
+                }
+            }
+        };
+        if (slider.classList.contains("product-slider--systems")) {
+            options.perPage = 2;
+            options.gap = "20px";
+            options.padding = {
+                left: 0,
+                right: "15%"
+            };
+            options.breakpoints = {
+                650: {
+                    perPage: 1
+                },
+                gap: "10px"
+            };
+        }
+        if (slider.classList.contains("product-slider--destroy")) options.breakpoints = {
+            ...options.breakpoints,
+            550: {
+                destroy: true
+            }
+        };
+        const splideInstance = new Splide(slider, options);
+        splideInstance.on("mounted move", (() => {
+            if (prevArrow) prevArrow.disabled = splideInstance.index === 0;
+            if (nextArrow) nextArrow.disabled = splideInstance.index === splideInstance.Components.Controller.getEnd();
+            console.log(`Slider #${index + 1} - Selected slide index: ${splideInstance.index}`);
+        }));
+        splideInstance.mount();
+        if (prevArrow) prevArrow.addEventListener("click", (() => splideInstance.go("<")));
+        if (nextArrow) nextArrow.addEventListener("click", (() => splideInstance.go(">")));
+        const tabsParent = slider.closest("[data-tabs]");
+        if (tabsParent) tabsParent.addEventListener("tabSwitch", (function(event) {
+            splideInstance.refresh();
+        }));
+    }));
     function functions_getHash() {
         if (location.hash) return location.hash.replace("#", "");
     }
@@ -3066,7 +3137,7 @@
             if (el.closest("[data-tabs-title]")) {
                 const tabTitle = el.closest("[data-tabs-title]");
                 const tabsBlock = tabTitle.closest("[data-tabs]");
-                const splideElement = tabsBlock.querySelector(".splide");
+                const splideElement = tabsBlock.querySelector("._splide-tabs");
                 if (splideElement && splideElement.splideInstance) {
                     const splide = splideElement.splideInstance;
                     const tabIndex = Array.from(tabTitle.parentElement.children).indexOf(tabTitle);
@@ -3078,6 +3149,8 @@
                     tabTitle.classList.add("_tab-active");
                     setTabsStatus(tabsBlock);
                 }
+                const tabSwitchEvent = new CustomEvent("tabSwitch");
+                tabsBlock.dispatchEvent(tabSwitchEvent);
                 e.preventDefault();
             }
         }
@@ -3141,71 +3214,6 @@
             }
         }
     }
-    const productsSlider = document.querySelectorAll(".product-slider");
-    productsSlider.forEach((slider => {
-        const parent = slider.closest("[data-slider-parent]");
-        let prevArrow = null;
-        let nextArrow = null;
-        if (parent) {
-            prevArrow = parent.querySelector(".slider-section__arrow--prev");
-            nextArrow = parent.querySelector(".slider-section__arrow--next");
-        }
-        const options = {
-            perMove: 1,
-            arrows: false,
-            pagination: false,
-            updateOnMove: true,
-            omitEnd: true,
-            perPage: 3,
-            flickMaxPages: 1,
-            flickPower: 100,
-            gap: "30px",
-            padding: {
-                left: 0,
-                right: "20%"
-            },
-            breakpoints: {
-                991.98: {
-                    perPage: 2
-                },
-                767.98: {
-                    gap: "10px",
-                    perPage: 1,
-                    padding: {
-                        left: 0,
-                        right: "40%"
-                    }
-                }
-            }
-        };
-        if (slider.classList.contains("product-slider--systems")) {
-            options.perPage = 2;
-            options.gap = "20px";
-            options.padding = {
-                left: 0,
-                right: "15%"
-            }, options.breakpoints = {
-                650: {
-                    perPage: 1
-                },
-                gap: "10px"
-            };
-        }
-        if (slider.classList.contains("product-slider--destroy")) options.breakpoints = {
-            ...options.breakpoints,
-            550: {
-                destroy: true
-            }
-        };
-        const splide = new Splide(slider, options);
-        splide.on("mounted move", (() => {
-            if (prevArrow) if (splide.index === 0) prevArrow.disabled = true; else prevArrow.disabled = false;
-            if (nextArrow) if (splide.index === splide.Components.Controller.getEnd()) nextArrow.disabled = true; else nextArrow.disabled = false;
-        }));
-        splide.mount();
-        if (prevArrow) prevArrow.addEventListener("click", (() => splide.go("<")));
-        if (nextArrow) nextArrow.addEventListener("click", (() => splide.go(">")));
-    }));
     let addWindowScrollEvent = false;
     setTimeout((() => {
         if (addWindowScrollEvent) {
