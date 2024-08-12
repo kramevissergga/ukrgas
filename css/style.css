@@ -1164,22 +1164,20 @@ ma .product-item__image--padding {
   background-color: #fecc00;
   color: #fff
 }
-.benefits-section {
-  display: grid;
-  width: 100%;
-  align-content: start
+.benefits-section__top {
+  background-color: #fecc00
+}
+.benefits-section__bottom {
+  background-color: #f4f4f4
 }
 .benefits-section__block--left {
-  padding: 4.666667% 9.5% 4.666667% 25.166667%;
-  background-color: #fecc00
+  padding: 4.666667% 9.5% 4.666667% 0
 }
 .benefits-section__block--right {
-  padding: 6.682578% 24.5% 6.682578% 4.77327%;
-  background-color: #fecc00
+  padding: 6.682578% 0 6.682578% 4.77327%
 }
 .benefits-section__block--center {
-  padding: 6.682578% 12.55814% 14.797136% 8.837209%;
-  background-color: #f4f4f4
+  padding: 6.682578% 12.887828% 14.797136% 8.837209%
 }
 .benefits-section__image {
   width: 100%;
@@ -1193,10 +1191,14 @@ ma .product-item__image--padding {
 }
 .benefits-section__title {
   font-weight: 700;
-  text-transform: uppercase
+  text-transform: uppercase;
+  font-size: 1.125rem
 }
 .benefits-section__title:not(:last-child) {
   margin-bottom: 1rem
+}
+.benefits-section__text {
+  font-size: .875rem
 }
 .item-news-section {
   background: #f4f4f4;
@@ -1887,8 +1889,13 @@ ma .product-item__image--padding {
   .tabs-block .splide {
     display: none
   }
-  .benefits-section {
-    grid-template-columns: 41.666667% 29.097222% 1fr
+  .benefits-section__top .benefits-section__container {
+    display: grid;
+    grid-template-columns: 1fr 26.1875rem 1fr
+  }
+  .benefits-section__bottom {
+    display: grid;
+    grid-template-columns: 1fr 26.1875rem 1fr
   }
   .item-news-section {
     padding-top: .9375rem;
@@ -2232,22 +2239,6 @@ ma .product-item__image--padding {
   }
   .page__contacts {
     margin-bottom: 3.75rem
-  }
-}
-@media (min-width:160em) {
-  .benefits-section__title {
-    font-size: 3.125rem
-  }
-  .benefits-section__text {
-    font-size: 1.875rem
-  }
-}
-@media (max-width:90em) {
-  .benefits-section__title {
-    font-size: 1.125rem
-  }
-  .benefits-section__text {
-    font-size: .875rem
   }
 }
 @media (max-width:25em) {
@@ -2730,6 +2721,10 @@ ma .product-item__image--padding {
   }
   .tabs-slider__title {
     padding: .5625rem .9375rem
+  }
+  .benefits-section__top .benefits-section__container .benefits-section__block {
+    margin-right: -.9375rem;
+    margin-left: -.9375rem
   }
   .benefits-section__block--left {
     padding: 1.25rem .9375rem
@@ -3234,12 +3229,12 @@ ma .product-item__image--padding {
     max-width: 20rem
   }
 }
-@media (min-width:90em)and (max-width:160em) {
-  .benefits-section__title {
-    font-size: clamp(1.125rem ,-1.4464285714rem + 2.8571428571vw ,3.125rem)
+@media (min-width:47.99875em)and (max-width:71.24875em) {
+  .benefits-section__top .benefits-section__container {
+    grid-template-columns: 1fr 36.754386% 1fr
   }
-  .benefits-section__text {
-    font-size: clamp(.875rem ,-.4107142857rem + 1.4285714286vw ,1.875rem)
+  .benefits-section__bottom {
+    grid-template-columns: 1fr 35.632% 1fr
   }
 }
 @media (min-width:47.99875em)and (min-width:47.99875em)and (max-width:73.125em) {
