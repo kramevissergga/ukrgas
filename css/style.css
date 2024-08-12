@@ -642,6 +642,9 @@ summary::marker {
 .slider-section__slider {
   position: relative
 }
+.slider-section__slider .product-item {
+  width: 100%
+}
 .slider-section__slider .product-item__image:not(:last-child) {
   margin-bottom: 1.5rem
 }
@@ -833,7 +836,8 @@ ma .product-item__image--padding {
 }
 .product-slider .splide__slide {
   display: flex;
-  align-items: stretch
+  align-items: stretch;
+  justify-content: stretch
 }
 .product-slider--destroy .splide__slide {
   position: relative
@@ -1517,6 +1521,7 @@ ma .product-item__image--padding {
 }
 .offer-history__items {
   display: grid;
+  row-gap: .9375rem;
   grid-template-columns: repeat(auto-fill,minmax(21.1875rem,1fr))
 }
 .offer-history__item {
@@ -2163,7 +2168,9 @@ ma .product-item__image--padding {
     margin-bottom: 1.9375rem
   }
   .offer-history__items {
-    gap: 3.75rem
+    -webkit-column-gap: 3.75rem;
+    -moz-column-gap: 3.75rem;
+    column-gap: 3.75rem
   }
   .tabs-underline__header:not(:last-child) {
     margin-bottom: 2.6875rem
@@ -2409,7 +2416,9 @@ ma .product-item__image--padding {
     margin-bottom: 1.25rem
   }
   .offer-history__items {
-    gap: .9375rem
+    -webkit-column-gap: .9375rem;
+    -moz-column-gap: .9375rem;
+    column-gap: .9375rem
   }
   .tabs-underline__header:not(:last-child) {
     margin-bottom: 1.25rem
@@ -3155,7 +3164,9 @@ ma .product-item__image--padding {
     margin-bottom: clamp(1.25rem ,.9911764706rem + 1.2941176471vw ,1.9375rem)
   }
   .offer-history__items {
-    gap: clamp(.9375rem ,-.1213235294rem + 5.2941176471vw ,3.75rem)
+    -webkit-column-gap: clamp(.9375rem ,-.1213235294rem + 5.2941176471vw ,3.75rem);
+    -moz-column-gap: clamp(.9375rem ,-.1213235294rem + 5.2941176471vw ,3.75rem);
+    column-gap: clamp(.9375rem ,-.1213235294rem + 5.2941176471vw ,3.75rem)
   }
   .tabs-underline__header:not(:last-child) {
     margin-bottom: clamp(1.25rem ,.7088235294rem + 2.7058823529vw ,2.6875rem)
